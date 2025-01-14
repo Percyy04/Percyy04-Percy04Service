@@ -1,0 +1,27 @@
+server:
+  port: 8080
+  servlet:
+    context-path: /percy04
+
+spring:
+  datasource:
+    driver-class-name: com.microsoft.sqlserver.jdbc.SQLServerDriver
+    url: jdbc:sqlserver://localhost:1433;databaseName=percy04-service;encrypt=true;trustServerCertificate=true
+    username: sa
+    password: 12345
+
+mybatis:
+  mapper-locations: classpath:mapper/*.xml  # Location of your mapper XML files
+  type-aliases-package: com.percy04demo1.percy04demo1.model  # Your model/entity package
+  configuration:
+    map-underscore-to-camel-case: true      # Optional: converts database_column to databaseColumn
+  jpa:
+    hibernate:
+      ddl-auto: update
+    properties:
+      hibernate:
+        dialect: org.hibernate.dialect.SQLServerDialect
+    show-sql: true
+
+jwt :
+  signerKey : "hdd2i8Y0I6bdAK4Gru/hy+ES46dV5VQ/5r1lNA3jZJ3Dbi+YsgLGKKXF0vsRXEFx"
