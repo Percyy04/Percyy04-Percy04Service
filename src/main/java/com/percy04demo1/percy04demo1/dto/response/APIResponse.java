@@ -1,4 +1,4 @@
-package com.percy04demo1.percy04demo1.dto.resquest;
+package com.percy04demo1.percy04demo1.dto.response;
 
 import com.fasterxml.jackson.annotation.JsonInclude;
 import lombok.*;

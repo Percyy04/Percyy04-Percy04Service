@@ -1,7 +1,7 @@
 package com.percy04demo1.percy04demo1.controller;
 
 import com.percy04demo1.percy04demo1.dto.response.UserResponse;
-import com.percy04demo1.percy04demo1.dto.resquest.APIResponse;
+import com.percy04demo1.percy04demo1.dto.response.APIResponse;
 import com.percy04demo1.percy04demo1.dto.resquest.UserCreationRequest;
 import com.percy04demo1.percy04demo1.dto.resquest.UserUpdateRequest;
 import com.percy04demo1.percy04demo1.entity.User;
@@ -23,12 +23,14 @@ public class UserController {
     UserService userService;
 
     @PostMapping("/users")
-    APIResponse<User> createUser(@RequestBody @Valid UserCreationRequest request) {
-        APIResponse<User> apiResponse = new APIResponse<>();
-
-        apiResponse.setResult((userService.createUser(request)));
-        return apiResponse;
+    public APIResponse<UserResponse> createUser(@RequestBody @Valid UserCreationRequest request) {
+        return APIResponse.<UserResponse>builder()
+                .result(userService.createUser(request))
+                .build();
     }
+
+
+
 
     @GetMapping
     List<User> getUsers() {

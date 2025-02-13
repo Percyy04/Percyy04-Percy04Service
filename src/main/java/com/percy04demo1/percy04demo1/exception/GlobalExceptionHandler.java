@@ -1,6 +1,6 @@
 package com.percy04demo1.percy04demo1.exception;
 
-import com.percy04demo1.percy04demo1.dto.resquest.APIResponse;
+import com.percy04demo1.percy04demo1.dto.response.APIResponse;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.MethodArgumentNotValidException;
 import org.springframework.web.bind.annotation.ControllerAdvice;
